@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+{% include '/theme/include/head.html' %}
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  {% include '/theme/include/main-header.html' %}
+  {% include '/theme/include/main-sidebar.html' %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        {{title}}
+        <small>{{subtitle}}</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        {% if title == 'Top Navigation' or title == 'Boxed Layout' or title == 'Fixed Layout' or title == 'Sidebar Collapsed'%}
+        <li><a href="#">Layout</a></li>
+        {% elif title == 'ChartJS' %}
+        <li><a href="#">Charts</a></li>
+        {% elif title == 'General UI' or title == 'Icons' or title == 'Buttons' or title == 'Sliders' or title == 'Timeline' or title == 'Modals' %}
+        <li><a href="#">UI</a></li>
+        {% elif title == 'General Form Elements' or title == 'Advanced Form Elements' or title == 'Text Editors' %}
+        <li><a href="#">Forms</a></li>
+        {% elif title == 'Data Tables' or title == 'Simple Tables' %}
+        <li><a href="#">Tables</a></li>
+        {% endif %}
+        <li class="active">{{title}}</li>
+      </ol>
+    </section>
+
+    {% block content %}{% endblock %}
+  </div>
+  <!-- /.content-wrapper -->
+
+  {% include '/theme/include/main-footer.html' %}
+  {% include '/theme/include/control-sidebar.html' %}
+
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+{% include '/theme/include/footer.html' %}
+</body>
+</html>
